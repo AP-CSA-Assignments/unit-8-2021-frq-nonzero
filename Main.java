@@ -1,36 +1,27 @@
-import java.util.Scanner;
-
 public class Main
 {
   public static void main(String[] args)
   {
-    // TODO: Make an array of doubles, and test your sumArray method
+    int[][] arr = {{2, 1, 0},
+                   {1, 3, 2},
+                   {0, 0, 0},
+                   {4, 5, 6}};
+    System.out.println("Testing ArrayResizer.isNonZeroRow(arr, 0)");
+    System.out.println("Expected value: false\nActual Value: " + ArrayResizer.isNonZeroRow(arr, 0));
 
-    // TODO: Make an array of Strings, and test your averageLength method
+    System.out.println("Testing ArrayResizer.isNonZeroRow(arr, 1)");
+    System.out.println("Expected value: true\nActual Value: " + ArrayResizer.isNonZeroRow(arr, 1));
+    
+    int[][] smaller = ArrayResizer.resize(arr);
+    System.out.println("Expected result:\n1 3 2\n4 5 6\nActual result:");
 
-    // TODO: Make an array of ints, and test your arrayMax method
-
-    // TODO: Make an array of Strings as well as a target, and test your linearSearch method
-  }
-
-
-  public static double sumArray(double[] arr)
-  {
-    return 0.0;
-  }
-
-  public static double averageLength(String[] arr)
-  {
-    return 0.0;
-  }
-
-  public static int arrayMax(int[] arr)
-  {
-    return Integer.MIN_VALUE;
-  }
-
-  public static boolean linearSearch(String[] arr)
-  {
-    return false;
+    for (int[] row : smaller)
+    {
+      for (int elem : row)
+      {
+        System.out.print(elem + " ");
+      }
+      System.out.println();
+    }
   }
 }
